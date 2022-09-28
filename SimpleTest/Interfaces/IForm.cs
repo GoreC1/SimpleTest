@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace SimpleTest.Interfaces
 {
-    interface IForm
+    public interface IForm
     {
+        public int id { get; set; }
+        public string name { get; set; }
+        public IQuestion[] questions { get; set; }
     }
 }

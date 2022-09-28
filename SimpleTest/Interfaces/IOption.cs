@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace SimpleTest.Interfaces
 {
-    interface IOption
+    public interface IOption
     {
+        string value { get; set; }
     }
 }

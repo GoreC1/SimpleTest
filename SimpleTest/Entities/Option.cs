@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SimpleTest.Entities
 {
-    public class Question : IQuestion
+    public class Option : IOption
     {
         [Required]
-        public string title { get; set; }
+        public string value { get; set; }
     }
 }

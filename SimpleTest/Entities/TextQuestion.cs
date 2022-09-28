@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace SimpleTest.Entities
 {
-    public enum QuestionType
+    public class TextQuestion : Question
     {
-        Text,
-        Single,
-        Multiple
+        public string text;
+        public int? minLength;
+        public int? maxLength;
     }
 }

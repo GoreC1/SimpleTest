@@ -7,7 +7,7 @@ namespace SimpleTest.Interfaces
 {
     public interface IQuestion
     {
-        string Title { get; set; }
+        string title { get; set; }
 
     }
 }

@@ -4,6 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using SimpleTest.Interfaces;
+using SimpleTest.Repositories;
+using SimpleTest.Unit;
 
 namespace SimpleTest
 {
@@ -25,8 +28,12 @@ namespace SimpleTest
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SimpleTest", Version = "v1" });
             });
-
-
+            services.AddHttpContextAccessor();
+            
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<IFormRepository, FormRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
